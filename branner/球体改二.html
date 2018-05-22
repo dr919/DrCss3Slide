@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>dr球体改二</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            height: 100%;
+            background-color: black;
+            
+        }
+        @keyframes mymove
+        {
+        100% {
+            transform:  rotateX(360deg) rotateY(360deg) }
+        }
+
+
+        .box {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            margin: 250px auto;
+            transform-style: preserve-3d;
+            box-sizing: border-box;
+            animation: mymove 10s linear infinite;
+        }
+        .box1 {
+            height: 600px;
+            width: 600px;
+            margin: 250px auto;
+            position: absolute;
+            border: 5px solid springgreen;
+            border-radius: 600px;
+            left: 50%;
+            top: 50%;
+            margin-top: -300px;
+            margin-left: -300px;
+            transform-style: preserve-3d;
+            /*transform:skew(45deg) ;*/
+            animation: rotate 10s linear infinite;
+
+        }
+        @keyframes rotate {
+            0%{
+                transform:/*skew(45deg) */rotateY(0deg);
+            }
+            100%{
+                transform:/*skew(45deg)*/ rotateZ(360deg);
+            }
+
+        }
+        .box div {
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+            box-sizing: border-box;
+            border: 1px solid red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box .line1 {
+            height:100%;
+            width: 2px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left:-1px;
+            margin-top: -100px;
+            border: none;
+
+        }
+        .box .qian1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            transform: translateZ(50px);
+            border: 1px solid red;
+        }
+        .box .qian2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            transform: translateZ(-50px);
+            border: 1px solid red;
+        }
+        .box .left {
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+            box-sizing: border-box;
+            border: 1px solid red;
+            transform: rotateY(90deg);
+        }
+        .box .line2 {
+            height:100%;
+            width: 2px;
+            background-color: red;
+            border: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(90deg);
+            margin-left:-1px;
+            margin-top: -100px;
+
+        }
+        .box .left1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            transform: rotateY(90deg) translateZ(50px);
+            border: 1px solid red;
+        }
+        .box .left2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            transform: rotateY(90deg) translateZ(-50px);
+            border: 1px solid red;
+        }
+        .box .top {
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+            box-sizing: border-box;
+            border: 1px solid red;
+            transform: rotateX(90deg);
+        }
+        .box .line3 {
+            height:100%;
+            width: 2px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left:-1px;
+            margin-top: -100px;
+            transform: rotateX(-90deg);
+            border: none;
+
+        }
+        .box .top1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            transform: rotateX(90deg) translateZ(50px);
+            border: 1px solid red;
+        }
+        .box .top2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            transform: rotateX(90deg) translateZ(-50px);
+            border: 1px solid red;
+        }
+        .box1 .box {
+            top: -243px;
+            left: -233px;
+
+        }
+        .box1 .box div {
+            border-color: #0050D0;
+        }
+        .box1 .box .line {
+            background-color:#0050D0;
+        }
+        .box1 .box2 {
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            border: 3px solid sandybrown;
+            position: absolute;
+            top: -43px;
+            left: -86px;
+            animation: rotate 10s linear infinite;
+
+        }
+        .box3 {
+            position: relative;
+            height: 20px;
+            width: 20px;
+            margin: 250px auto;
+            transform-style: preserve-3d;
+            box-sizing: border-box;
+            animation: mymove 5s linear infinite;
+            top: 41px;
+            left: 0;
+        }
+        .box3 div {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid yellow;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box3 .line1 {
+            height:100%;
+            width: 2px;
+            background-color: yellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left:-1px;
+            margin-top: -10px;
+            border: none;
+
+        }
+        .box3 .qian1 {
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            top: 50%;
+            left: 50%;
+            margin-top: -7.5px;
+            margin-left: -7.5px;
+            transform: translateZ(5px);
+            border: 1px solid yellow;
+        }
+        .box3 .qian2 {
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            top: 50%;
+            left: 50%;
+            margin-top: -7.5px;
+            margin-left: -7.5px;
+            transform: translateZ(-5px);
+            border: 1px solid yellow;
+        }
+        .box3 .left {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid yellow;
+            transform: rotateY(90deg);
+        }
+        .box3 .line2 {
+            height:100%;
+            width: 2px;
+            background-color: yellow;
+            border: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(90deg);
+            margin-left:-1px;
+            margin-top: -10px;
+
+        }
+        .box3 .left1 {
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            top: 50%;
+            left: 50%;
+            margin-top: -7.5px;
+            margin-left: -7.5px;
+            transform: rotateY(90deg) translateZ(5px);
+            border: 1px solid yellow;
+        }
+        .box3 .left2 {
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            top: 50%;
+            left: 50%;
+            margin-top: -7.5px;
+            margin-left: -7.5px;
+            transform: rotateY(90deg) translateZ(-5px);
+            border: 1px solid yellow;
+        }
+        .box3 .top {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid yellow;
+            transform: rotateX(90deg);
+        }
+        .box3 .line3 {
+            height:100%;
+            width: 2px;
+            background-color: yellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left:-1px;
+            margin-top: -10px;
+            transform: rotateX(-90deg);
+            border: none;
+
+        }
+        .box3 .top1 {
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            top: 50%;
+            left: 50%;
+            margin-top: -7.5px;
+            margin-left: -7.5px;
+            transform: rotateX(90deg) translateZ(5px);
+            border: 1px solid yellow;
+        }
+        .box3 .top2 {
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            top: 50%;
+            left: 50%;
+            margin-top: -7.5px;
+            margin-left: -7.5px;
+            transform: rotateX(90deg) translateZ(-5px);
+            border: 1px solid yellow;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="qian"></div>
+    <div class="qian1"></div>
+    <div class="qian2"></div>
+    <div class="line1"></div>
+    <div class="left"></div>
+    <div class="left1"></div>
+    <div class="left2"></div>
+    <div class="line2"></div>
+    <div class="top"></div>
+    <div class="top1"></div>
+    <div class="top2"></div>
+    <div class="line3"></div>
+</div>
+<div class="box1">
+    <div class="box2">
+        <div class="box3">
+            <div class="qian"></div>
+            <div class="qian1"></div>
+            <div class="qian2"></div>
+            <div class="line1"></div>
+            <div class="left"></div>
+            <div class="left1"></div>
+            <div class="left2"></div>
+            <div class="line2"></div>
+            <div class="top"></div>
+            <div class="top1"></div>
+            <div class="top2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+    <div class="box">
+    <div class="qian"></div>
+    <div class="qian1"></div>
+    <div class="qian2"></div>
+    <div class="line line1"></div>
+    <div class="left"></div>
+    <div class="left1"></div>
+    <div class="left2"></div>
+    <div class="line line2"></div>
+    <div class="top"></div>
+    <div class="top1"></div>
+    <div class="top2"></div>
+    <div class="line line3"></div>
+</div></div>
+</body>
+</html>

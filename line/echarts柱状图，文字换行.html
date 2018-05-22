@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>echarts柱状图，文字换行</title>
+    <link rel="stylesheet" href="css/base.css" type="text/css" />
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+</head>
+
+<body>
+    <section id="section" class="tranck_all">
+        <div class="content">
+            <div class="view_bar">
+                <div id="main" style="height:300px;"></div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./js/echarts.common.min.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+    // 使文字换行函数
+    function newline(option, number, axis) {
+        /* 此处注意你的json是数组还是对象 */
+        option[axis][0]['axisLabel'] = {
+            interval: 0,
+            formatter: function (params) {
+                var newParamsName = "";
+                var paramsNameNumber = params.length;
+                var provideNumber = number;
+                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                if (paramsNameNumber > provideNumber) {
+                    for (var p = 0; p < rowNumber; p++) {
+                        var tempStr = "";
+                        var start = p * provideNumber;
+                        var end = start + provideNumber;
+                        if (p == rowNumber - 1) {
+                            tempStr = params.substring(start, paramsNameNumber);
+                        } else {
+                            tempStr = params.substring(start, end) + "\n";
+                        }
+                        newParamsName += tempStr;
+                    }
+                } else {
+                    newParamsName = params;
+                }
+                return newParamsName
+            }
+        }
+        return option;
+    }
+    option = {
+        color: ['#3398DB'],
+
+        grid: {
+            left: '0%',
+            right: '2%',
+            bottom: '2%',
+            containLabel: true,
+            borderWidth: 0
+        },
+        xAxis: [
+
+            {
+                show: true,
+                type: 'category',
+                data: ['哈尔滨   20.3%', ' 上海    20.3%', ' 北京    20.3%', ' 南京    20.3%', ' 深圳    20.3%', ' 广州    20.3%'],
+                axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                },
+            },
+        ],
+        yAxis: [
+            {
+                show: false,
+                type: 'value'
+            }
+        ],
+        calculable: false,
+        series: [
+            {
+                type: 'bar',
+                barWidth: '20%',
+                data: [100, 52, 200, 334, 390, 340]
+            }
+        ],
+
+    };
+    newline(option, 6, 'xAxis')
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</html>
